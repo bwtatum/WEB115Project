@@ -31,7 +31,7 @@ GitHub Repository
 https://github.com/bwtatum/WEB115Project  
 
 Wake Tech Hosted Version  
-(Add link here after uploading)
+https://wcet.waketech.edu/bwtatum/web115/PROJECT/
 
 ### Notes
 
