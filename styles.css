@@ -1,0 +1,275 @@
+/* Basic reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 900px;
+  background: #020617;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem 2rem 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+  color: #f97316;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #9ca3af;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  gap: 1.5rem;
+}
+
+section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: #e5e7eb;
+}
+
+/* Form styles */
+
+.task-form-section {
+  background: #020617;
+  border-radius: 0.75rem;
+  border: 1px solid #1f2937;
+  padding: 1rem 1.25rem;
+}
+
+.form-row {
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.form-row label {
+  font-size: 0.9rem;
+  color: #d1d5db;
+}
+
+input[type="text"],
+select {
+  background: #020617;
+  border-radius: 0.5rem;
+  border: 1px solid #4b5563;
+  padding: 0.5rem 0.75rem;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: #f97316;
+  box-shadow: 0 0 0 1px #f97316;
+}
+
+.check-row {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.check-row input[type="checkbox"] {
+  margin-right: 0.4rem;
+}
+
+.form-actions {
+  margin-top: 0.75rem;
+}
+
+#addTaskButton {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: 999px;
+  border: none;
+  background: #f97316;
+  color: #111827;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+}
+
+#addTaskButton:hover {
+  background: #fb923c;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+#addTaskButton:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.error-message {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  min-height: 1rem;
+}
+
+/* Task list styles */
+
+.task-list-section {
+  background: #020617;
+  border-radius: 0.75rem;
+  border: 1px solid #1f2937;
+  padding: 1rem 1.25rem;
+}
+
+.task-manager {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.empty-message {
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+/* Individual task card */
+
+.task-card {
+  background: #020617;
+  border-radius: 0.75rem;
+  border: 1px solid #374151;
+  padding: 0.75rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.task-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.task-name {
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.task-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  justify-content: space-between;
+}
+
+.task-meta-left {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.task-date {
+  font-style: italic;
+}
+
+.priority-pill {
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  border: 1px solid #4b5563;
+}
+
+/* Priority colors (general style, not the required red highlight) */
+
+.priority-high {
+  background: rgba(248, 113, 113, 0.15);
+  border-color: #fca5a5;
+}
+
+.priority-medium {
+  background: rgba(251, 191, 36, 0.12);
+  border-color: #facc15;
+}
+
+.priority-low {
+  background: rgba(52, 211, 153, 0.12);
+  border-color: #6ee7b7;
+}
+
+.task-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.task-controls label {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+
+.task-controls input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.delete-task-btn {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid #4b5563;
+  background: #111827;
+  color: #fca5a5;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.1s ease, border-color 0.1s ease, transform 0.1s ease;
+}
+
+.delete-task-btn:hover {
+  background: #7f1d1d;
+  border-color: #fecaca;
+  transform: translateY(-1px);
+}
+
+/* Responsive layout */
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .app-container {
+    padding: 1.25rem 1rem 1.5rem 1rem;
+  }
+}

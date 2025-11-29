@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TaskFlow Manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>TaskFlow Manager</h1>
+      <p class="subtitle">Organize and track your tasks efficiently</p>
+    </header>
+
+    <main>
+      <!-- Task Form -->
+      <section class="task-form-section">
+        <h2>Add a new task</h2>
+        <form id="taskForm">
+          <div class="form-row">
+            <label for="taskName">Task name</label>
+            <input
+              type="text"
+              id="taskName"
+              name="taskName"
+              placeholder="Enter task name"
+              required
+            >
+          </div>
+
+          <div class="form-row">
+            <label for="taskPriority">Priority</label>
+            <select id="taskPriority" name="taskPriority">
+              <option value="High">High</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </div>
+
+          <div class="form-row check-row">
+            <label>
+              <input type="checkbox" id="taskImportant" name="taskImportant">
+              Mark as important
+            </label>
+          </div>
+
+          <div class="form-row check-row">
+            <label>
+              <input type="checkbox" id="taskCompleted" name="taskCompleted">
+              Mark as completed
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" id="addTaskButton">Add Task</button>
+          </div>
+
+          <p id="formError" class="error-message" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <!-- Task List -->
+      <section class="task-list-section">
+        <h2>Your tasks</h2>
+        <div id="taskmanager" class="task-manager">
+          <!-- Tasks will be injected here by JavaScript -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
